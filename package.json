@@ -4,7 +4,8 @@
   "description": "Generate mock objects from JSON Schema",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "test": "mocha --compilers js:espower-babel/guess spec/**/*.js"
   },
   "keywords": [
     "json-schema"
