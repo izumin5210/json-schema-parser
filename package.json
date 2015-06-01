@@ -10,5 +10,13 @@
     "json-schema"
   ],
   "author": "Masayuki IZUMI <masayuki@izumin.info> (https://github.com/izumin5210)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.4.7",
+    "dtsm": "^0.10.2",
+    "espower-babel": "^3.1.1",
+    "mocha": "^2.2.5",
+    "power-assert": "^0.11.0",
+    "typescript": "^1.5.0-beta"
+  }
 }
