@@ -2,7 +2,7 @@
   "repos": [
     {
       "url": "https://github.com/borisyankov/DefinitelyTyped.git",
-      "ref": "master"
+      "ref": "tsc-1.5.0-alpha"
     }
   ],
   "path": "typings",
@@ -12,5 +12,15 @@
       "include": true
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "node/node.d.ts": {
+      "ref": "484544d14d400190b20f270341c97b16adc0f1ef"
+    },
+    "core-js/core-js.d.ts": {
+      "ref": "4408b656fab59a4e7f871da2f492311eedc9bdcd"
+    },
+    "json-pointer/json-pointer.d.ts": {
+      "ref": "4408b656fab59a4e7f871da2f492311eedc9bdcd"
+    }
+  }
 }
