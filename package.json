@@ -23,6 +23,13 @@
   "directories": {
     "test": "spec/"
   },
+  "files": [
+    "README.md",
+    "index.js",
+    "package.json",
+    "lib",
+    "spec"
+  ],
   "homepage": "https://github.com/izumin5210/json-schema-parser",
   "keywords": [
     "json-schema",
