@@ -1,30 +1,15 @@
 {
   "name": "json-schema-parser",
-  "version": "0.0.1",
   "description": "Parse JSON Schema and resolve $ref",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "test": "mocha --compilers js:espower-babel/guess spec/**/*.js"
-  },
-  "keywords": [
-    "json-schema",
-    "jsonschema"
-  ],
+  "version": "0.0.1",
   "author": {
     "name": "Masayuki IZUMI",
     "email": "masayuki@izumin.info",
     "url": "https://github.com/izumin5210"
   },
   "bugs": "https://github.com/izumin5210/json-schema-parser/issues",
-  "license": {
-    "type": "MIT",
-    "url": "http://izumin.mit-license.org/2015"
-  },
-  "homepage": "https://github.com/izumin5210/json-schema-parser",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/izumin5210/json-schema-parser.git"
+  "dependencies": {
+    "json-pointer": "^0.3.0"
   },
   "devDependencies": {
     "babel": "^5.4.7",
@@ -35,10 +20,25 @@
     "power-assert": "^0.11.0",
     "typescript": "^1.5.0-beta"
   },
-  "dependencies": {
-    "json-pointer": "^0.3.0"
-  },
   "directories": {
     "test": "spec/"
+  },
+  "homepage": "https://github.com/izumin5210/json-schema-parser",
+  "keywords": [
+    "json-schema",
+    "jsonschema"
+  ],
+  "license": {
+    "type": "MIT",
+    "url": "http://izumin.mit-license.org/2015"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/izumin5210/json-schema-parser.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --compilers js:espower-babel/guess spec/**/*.js"
   }
 }
