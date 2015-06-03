@@ -1,7 +1,7 @@
 {
-  "name": "json-schema-mockify",
+  "name": "json-schema-parser",
   "version": "0.0.1",
-  "description": "Generate mock objects from JSON Schema",
+  "description": "Parse JSON Schema and resolve $ref",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
