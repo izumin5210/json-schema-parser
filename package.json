@@ -14,6 +14,7 @@
   "license": "MIT",
   "devDependencies": {
     "babel": "^5.4.7",
+    "babel-plugin-espower": "^1.0.0",
     "dtsm": "^0.10.2",
     "espower-babel": "^3.1.1",
     "mocha": "^2.2.5",
@@ -22,5 +23,8 @@
   },
   "dependencies": {
     "json-pointer": "^0.3.0"
+  },
+  "directories": {
+    "test": "spec/"
   }
 }
