@@ -4,13 +4,13 @@
     "target": "es5",
     "module": "commonjs",
     "noImplicitAny": true,
-    "declaration": false,
+    "declaration": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "outDir": "./lib",
     "sourceMap": true
   },
   "files": [
-    "./src/index.ts"
+    "./src/parser.ts"
   ]
 }
