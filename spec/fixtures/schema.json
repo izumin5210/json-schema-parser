@@ -1,0 +1,238 @@
+{
+  "$schema": "http://json-schema.org/draft-04/hyper-schema",
+  "type": [
+    "object"
+  ],
+  "definitions": {
+    "comment": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Comment",
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of comment",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "body": {
+          "description": "unique name of body",
+          "example": "Is the order a rabbit?",
+          "readOnly": false,
+          "type": [
+            "string"
+          ]
+        },
+        "created_at": {
+          "description": "when comment was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when comment was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/comment/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/comment/definitions/id"
+        },
+        "body": {
+          "$ref": "#/definitions/comment/definitions/body"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/comment/definitions/updated_at"
+        },
+        "user": {
+          "$ref": "#/definitions/user"
+        }
+      }
+    },
+    "post": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "Post",
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of post",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "body": {
+          "description": "unique body of post",
+          "example": "Ah^~ My heart will be hopping^~",
+          "readOnly": false,
+          "type": [
+            "string"
+          ]
+        },
+        "created_at": {
+          "description": "when post was created",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        },
+        "updated_at": {
+          "description": "when post was updated",
+          "example": "2012-01-01T12:00:00Z",
+          "format": "date-time",
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "links": [
+        {
+          "description": "Create a new post.",
+          "href": "/posts",
+          "method": "POST",
+          "rel": "create",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Create"
+        },
+        {
+          "description": "Delete an existing post.",
+          "href": "/posts/{(%23%2Fdefinitions%2Fpost%2Fdefinitions%2Fid)}",
+          "method": "DELETE",
+          "rel": "destroy",
+          "title": "Delete"
+        },
+        {
+          "description": "Info for existing post.",
+          "href": "/posts/{(%23%2Fdefinitions%2Fpost%2Fdefinitions%2Fid)}",
+          "method": "GET",
+          "rel": "self",
+          "title": "Info"
+        },
+        {
+          "description": "List existing posts.",
+          "href": "/posts",
+          "method": "GET",
+          "rel": "instances",
+          "title": "List"
+        },
+        {
+          "description": "Update an existing post.",
+          "href": "/posts/{(%23%2Fdefinitions%2Fpost%2Fdefinitions%2Fid)}",
+          "method": "PATCH",
+          "rel": "update",
+          "schema": {
+            "properties": {
+            },
+            "type": [
+              "object"
+            ]
+          },
+          "title": "Update"
+        }
+      ],
+      "properties": {
+        "created_at": {
+          "$ref": "#/definitions/post/definitions/created_at"
+        },
+        "id": {
+          "$ref": "#/definitions/post/definitions/id"
+        },
+        "body": {
+          "$ref": "#/definitions/post/definitions/body"
+        },
+        "updated_at": {
+          "$ref": "#/definitions/post/definitions/updated_at"
+        },
+        "user": {
+          "$ref": "#/definitions/user"
+        },
+        "comments": {
+          "type": [
+            "array"
+          ],
+          "items": {
+            "$ref": "#/definitions/comment"
+          }
+        }
+      }
+    },
+    "user": {
+      "$schema": "http://json-schema.org/draft-04/hyper-schema",
+      "title": "User",
+      "type": [
+        "object"
+      ],
+      "definitions": {
+        "id": {
+          "description": "unique identifier of user",
+          "example": "01234567-89ab-cdef-0123-456789abcdef",
+          "readOnly": true,
+          "format": "uuid",
+          "type": [
+            "string"
+          ]
+        },
+        "name": {
+          "description": "unique name of user",
+          "example": "Syaro",
+          "readOnly": false,
+          "type": [
+            "string"
+          ]
+        }
+      },
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/user/definitions/id"
+        },
+        "name": {
+          "$ref": "#/definitions/user/definitions/name"
+        }
+      }
+    }
+  },
+  "properties": {
+    "comment": {
+      "$ref": "#/definitions/comment"
+    },
+    "post": {
+      "$ref": "#/definitions/post"
+    },
+    "user": {
+      "$ref": "#/definitions/user"
+    }
+  },
+  "description": "A schema for an example API",
+  "links": [
+    {
+      "href": "https://api.example.com",
+      "rel": "self"
+    }
+  ],
+  "title": "Example API"
+}
