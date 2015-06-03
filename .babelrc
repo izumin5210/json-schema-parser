@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "./lib/**/*.js",
+    "./node_modules/**/*.js"
+  ]
+}
