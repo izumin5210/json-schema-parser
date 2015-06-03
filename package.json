@@ -11,7 +11,10 @@
     "json-schema"
   ],
   "author": "Masayuki IZUMI <masayuki@izumin.info> (https://github.com/izumin5210)",
-  "license": "MIT",
+  "license": {
+    "type": "MIT",
+    "url": "http://izumin.mit-license.org/2015"
+  },
   "devDependencies": {
     "babel": "^5.4.7",
     "babel-plugin-espower": "^1.0.0",
