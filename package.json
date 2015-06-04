@@ -46,7 +46,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "dtsm": "dtsm install --insight false",
+    "dtsm": "dtsm --insight false install",
     "test": "mocha --compilers js:espower-babel/guess spec/**/*.js"
   }
 }
