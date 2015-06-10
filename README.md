@@ -1,8 +1,8 @@
 # JsonSchemaParser
-Parse JSON Schema and resolve `$ref` fields.
-
 [![Build Status](https://travis-ci.org/izumin5210/json-schema-parser.svg)](https://travis-ci.org/izumin5210/json-schema-parser)
 [![npm version](https://badge.fury.io/js/json-schema-parser.svg)](http://badge.fury.io/js/json-schema-parser)
+
+Parse JSON Schema and resolve `$ref` fields.
 
 ## Installation
 
