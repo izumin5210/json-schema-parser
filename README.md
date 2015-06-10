@@ -13,13 +13,12 @@ $ npm install json-schema-parser
 ## Usage
 
 ```javascript
-var schema = require("./spec/fixtures/schema.json");
-var Parser = require("json-schema-parser");
+var json = require("./spec/fixtures/schema.json");
+var parser = require("json-schema-parser");
 
-var parser = new Parser(schema);
-parser.parse();
+var schema = parser.parse(json);
 
-console.log(parser.schema);   // print the schema that is resolved $ref fields
+console.log(schema);   // print the schema that is resolved $ref fields
 ```
 
 JsonSchemaParser includes `jsonschema.d.ts` and `parser.d.ts`.
