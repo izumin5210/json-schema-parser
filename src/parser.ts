@@ -7,35 +7,31 @@
 import fs = require("fs");
 import pointer = require("json-pointer");
 
-class JsonSchemaParser {
-  constructor(private schema: jsonschema.Schema) {
+export function parse(schema: jsonschema.Schema, path: string = "") {
+  if (pointer.has(schema, `${path}/$ref`)) {
+    resolveReference(schema, path);
+    return schema;
   }
 
-  parse(path: string = "") {
-    if (pointer.has(this.schema, `${path}/$ref`)) {
-      this.resolveReference(path);
-      return;
+  let subschema = pointer.get(schema, path);
+  Object.keys(subschema).forEach((k: string) => {
+    let v = (<any> subschema)[k];
+    switch (typeof v) {
+      case "object":
+        parse(schema, `${path}/${k}`);
+        break;
+      case "array":
+        v.forEach((_: jsonschema.Schema, i: number) => parse(schema, `${path}/${i}`));
     }
+  });
 
-    let subschema = pointer.get(this.schema, path);
-    Object.keys(subschema).forEach((k: string) => {
-      let v = (<any> subschema)[k];
-      switch (typeof v) {
-        case "object":
-          this.parse(`${path}/${k}`);
-          break;
-        case "array":
-          v.forEach((_: jsonschema.Schema, i: number) => this.parse(`${path}/${i}`));
-      }
-    });
-  }
-
-  private resolveReference(path: string) {
-    let ref = pointer.get(this.schema, `${path}/$ref`).split('#')[1];
-    this.parse(ref);
-    let def = pointer.get(this.schema, ref);
-    pointer.set(this.schema, path, def);
-  }
+  return schema;
 }
 
-export = JsonSchemaParser;
+function resolveReference(schema: jsonschema.Schema, path: string) {
+  let ref = pointer.get(schema, `${path}/$ref`).split('#')[1];
+  parse(schema, ref);
+  let def = pointer.get(schema, ref);
+  pointer.set(schema, path, def);
+}
+
